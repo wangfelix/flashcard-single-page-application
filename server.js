@@ -6,8 +6,8 @@ require('dotenv/config');
 const bodyParser = require('body-parser')
 
 const mongoose = require('mongoose');
-const Stack = require('../FlashcardSinglePageApp/models/Stack');
-const SectionContainer = require ('../FlashcardSinglePageApp/models/SectionContainer');
+const Stack = require('./models/Stack');
+const SectionContainer = require ('./models/SectionContainer');
 
 
 const app = express();
@@ -50,6 +50,7 @@ app.get('/api/sets', async (req, res) => {
         res.json({message: err});
     }
 });
+
 
 app.get('/api/dividers', async (req, res) => {
     try {
@@ -120,11 +121,6 @@ app.post('/api/new_stack', async (req, res) => {
     }
 
 })
-
-
-
-
-
 
 app.post('/', async (req, res) => {
     console.log(req.body);

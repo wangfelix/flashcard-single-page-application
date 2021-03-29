@@ -29,8 +29,11 @@
             </div>
         </div>
     </div>
+    <!-- END OF The Settings-Modal -->
 
+    <!-- The Sidebar with the dividers/Sections -->
     <nav class="nav">
+
         <div class="logo">
             <a href="/" data-link>
                 <svg id="logoSVG" width="441" height="101" viewBox="0 0 441 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,35 +57,26 @@
             </div>
             <div class="nav-ui-li-border-div">
                 <li class="li">
-                    <a href='/sets' data-link>Sets</a>
-                </li>
-            </div>
-            <div class="nav-ui-li-border-div">
-                <li class="li">
                     <a href='/explore' data-link>Explore</a>
                 </li>
             </div>
 
 
             <div class="allSectionsContainer">
+<!--                TEMPLATE:-->
+<!--                <div class="singleSectionContainer">-->
+<!--                    <div class="dividerWithText">-->
+<!--                        <p class="dividerText">Wintersemester 2020</p>-->
+<!--                    </div>-->
 
-                <div class="singleSectionContainer">
-
-                    <div class="dividerWithText">
-                        <p class="dividerText">Wintersemester 2020</p>
-                    </div>
-
-                    <div class="navSetsContainer">
-                                        <div class="nav-ui-li-border-div">
-                                            <li class="li">
-                                                <a class="setNavLink" href="/createset" data-link>Create New Set</a>
-                                            </li>
-                                        </div>
-                    </div>
-
-                </div>
-
-
+<!--                    <div class="navSetsContainer">-->
+<!--                        <div class="nav-ui-li-border-div">-->
+<!--                            <li class="li">-->
+<!--                                <a class="setNavLink" href="/createset" data-link>Create New Set</a>-->
+<!--                            </li>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
 
             <!-- Divider and Spacer at the bottom of the Navbar. Class li so that it also has a height of 20px -->
@@ -92,12 +86,13 @@
         </ul>
 
     </nav>
+    <!-- END OF The Sidebar -->
 
     <div id="app"></div>
 
-    <script type="module" src="/static/js/index.js"></script>
-    <script src="/static/js/navShrinkOnScroll.js"></script>
-    <script type="module" src="/static/js/createPopUp.js" defer></script>
+    <script type="module" src="./static/js/index.js"></script>
+    <script src="./static/js/navShrinkOnScroll.js"></script>
+    <script type="module" src="./static/js/createPopUp.js" defer></script>
 
 </body>
 </html>

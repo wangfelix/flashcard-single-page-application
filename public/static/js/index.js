@@ -9,18 +9,37 @@ const navigateTo = (url) => {
     router();
 }
 
-const pathToRegex = path => {return new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$")};
+
 
 const router = async () => {
 
+    const pathToRegex = path => {
+        return new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$")
+    };
+
     console.log("regex:" + pathToRegex("posts/:id"))
 
+    // Array which stores all the existing paths, and the corresponding HTML file, which will be rendered
     const routes = [
-        {path: "/", view: Homepage},
-        {path: "/sets", view: Sets},
-        {path: "/explore", view: Explore},
-        {path: "/createset", view: CreateSet},
-        {path: "/stacks", view: StackPage}
+        {
+            path: "/",
+            view: Homepage
+        },
+        {
+            path: "/sets",
+            view: Sets
+        },
+        {
+            path: "/explore",
+            view: Explore
+        },
+        {
+            path: "/createset",
+            view: CreateSet},
+        {
+            path: "/stacks",
+            view: StackPage
+        }
     ];
 
 
