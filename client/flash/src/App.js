@@ -1,12 +1,16 @@
 import './App.css';
 import { SideBar } from "./components/SideBar";
+import {useState} from "react";
 
 function App() {
-  return (
+
+    const [page, setPage] = useState('homepage')
+
+    return (
     <div className="App">
-      <SideBar></SideBar>
+      <SideBar/>
     </div>
-  );
+    );
 }
 
 export default App;
