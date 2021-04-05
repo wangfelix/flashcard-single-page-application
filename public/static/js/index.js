@@ -94,7 +94,11 @@ const router = async () => {
     }
 
     const view = new match.route.view();
-    document.querySelector('#app').innerHTML = await view.getHtml();
+/*    document.querySelector('#app').innerHTML = await view.getHtml();
+    exec_body_scripts(document.querySelector('#app'))*/
+
+    insertAndExecute(document.querySelector('#app'), await view.getHtml())
+
     if (trimmedPathName === '/stacks') {
         document.getElementById('titleText').innerHTML = stackName;
         view.setTitle(stackName);
@@ -102,6 +106,26 @@ const router = async () => {
     await updateNavBar();
 
 };
+
+
+
+function insertAndExecute(elem, text) {
+    elem.innerHTML = text;
+    let scripts = Array.prototype.slice.call(elem.getElementsByTagName("script"));
+    for (let i = 0; i < scripts.length; i++) {
+        if (scripts[i].src !== "") {
+            let tag = document.createElement("script");
+            tag.src = scripts[i].src;
+            scripts[i].parentNode.appendChild(tag);
+            tag.type = scripts[i].type;
+        }
+        else {
+            eval(scripts[i].innerHTML);
+        }
+    }
+}
+
+
 
 window.addEventListener("popstate", router);
 
@@ -179,25 +203,6 @@ export async function updateNavBar(newStackName = undefined, idOfUpdatedDivider 
         dividerIsIncluded = false;
     })
 
-    /*for (let i = 0; i < myJsonStacks.length; i++) {
-
-        for(let j = 0; j < currentlyIncludedSets.length; j++){
-            if (myJsonStacks[i]['stackName'] === currentlyIncludedSets[j].innerHTML) {
-                setIsIncluded = true;
-                break;
-            }
-        }
-
-        if (!setIsIncluded) {
-            console.log("myJson["+i+"]:" + myJsonStacks[i]);
-            navBarHtml = navBarHtml
-                + '<div class="nav-ui-li-border-div"><li class="li"><a class="setNavLink" href="/'
-                + myJsonStacks[i]['stackName'].toLowerCase() + '" data-link>' + myJsonStacks[i]['stackName']
-                + '</a></li></div>';
-        }
-
-        setIsIncluded = false;
-    }*/
     document.querySelector('.navSetsContainer').insertAdjacentHTML('beforebegin', navBarHtml);
 
     let navbar = document.querySelectorAll(".singleSectionContainer");
