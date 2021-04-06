@@ -1,5 +1,6 @@
 import './App.css';
 import { SideBar } from "./components/SideBar";
+import { HomePage } from "./components/HomePage";
 import {useState, useEffect} from "react";
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         return (
             <div className="App">
                 <SideBar dividers={dividers}/>
+                <HomePage/>
             </div>
         );
     }

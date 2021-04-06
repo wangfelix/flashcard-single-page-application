@@ -1,3 +1,4 @@
+/*
 import {updateNavBar} from './index.js';
 
 window.openPopUp = async function openPopUp() {
@@ -146,3 +147,4 @@ window.createNewDivider = function createNewDivider() {
     return false;
 }
 
+*/

@@ -1,0 +1,59 @@
+.homepage{
+    width: 100%;
+    grid-column: 2/ span 1;
+}
+
+.homepage .main-section p {
+    padding: 0px 40px 40px 40px;
+    text-align: justify;
+    animation: fadeInText 0.3s ease-in-out;
+}
+
+@keyframes fadeInText {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+
+
+@keyframes moveTitle {
+    from{
+        bottom: 8px;
+        font-size: 30px;
+    }
+    to{
+        bottom: 20px;
+        font-size: 22px;
+    }
+}
+@keyframes moveBackTitle {
+    from{
+        bottom: 20px;
+        font-size: 22px;
+    }
+    to{
+        bottom: 8px;
+        font-size: 30px;
+    }
+}
+
+@keyframes shrinkHeaderBar {
+    from{
+        height: 110px;
+    }
+    to{
+        height: 69px;
+    }
+}
+@keyframes enlargeHeaderBar {
+    from{
+        height: 69px;
+    }
+    to{
+        height: 110px;
+    }
+}
