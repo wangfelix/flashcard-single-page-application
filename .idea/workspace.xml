@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ac39fb6-f681-49df-bc40-0b0df743f727" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/flash/src/components/css/SideBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/flash/src/components/Divider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/flash/src/components/css/Divider.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/flash/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/flash/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/flash/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/flash/public/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/flash/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/flash/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/flash/src/components/SideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/flash/src/components/SideBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/flash/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/flash/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/flash/src/components/css/SideBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/flash/src/components/css/SideBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +68,8 @@
       <workItem from="1617224708058" duration="2378000" />
       <workItem from="1617479452075" duration="614000" />
       <workItem from="1617572180400" duration="2999000" />
-      <workItem from="1617648528705" duration="14096000" />
+      <workItem from="1617648528705" duration="14140000" />
+      <workItem from="1617699962976" duration="13309000" />
     </task>
     <servers />
   </component>

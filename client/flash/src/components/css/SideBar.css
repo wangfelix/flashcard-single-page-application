@@ -57,11 +57,6 @@
     padding-left: 8%;
 }
 
-.singleSectionContainer {
-    max-height: 0px;
-    overflow-y: hidden;
-}
-
 
 @keyframes moveInNavBarItems {
     0%{
@@ -114,35 +109,6 @@
     } to{
           fill: #F4B947;
       }
-}
-
-.divider {
-    height: 2px;
-    background-color: #EAEAEA;
-    width: 90%;
-    border-radius: 10px;
-    margin-left: 5%;
-    margin-bottom: 8px;
-}
-
-.dividerWithText {
-    width: 90%;
-    margin-left: 5%;
-    border-top-style: solid;
-    border-top-width: 2px;
-    border-top-color: #EAEAEA;
-    margin-bottom: 4px;
-    display: flex;
-    align-items: center;
-    height: 35px;
-    padding-top: 7px;
-}
-
-.dividerWithText .dividerText {
-    margin-left: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #333333;
 }
 
 .navBarBottomDivider{
