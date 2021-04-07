@@ -1,6 +1,9 @@
 .homepage{
     width: 100%;
     grid-column: 2/ span 1;
+    height: 100vh;
+    overflow-y: scroll;
+
 }
 
 .homepage .main-section p {
@@ -15,45 +18,5 @@
     }
     to {
         opacity: 100%;
-    }
-}
-
-
-
-@keyframes moveTitle {
-    from{
-        bottom: 8px;
-        font-size: 30px;
-    }
-    to{
-        bottom: 20px;
-        font-size: 22px;
-    }
-}
-@keyframes moveBackTitle {
-    from{
-        bottom: 20px;
-        font-size: 22px;
-    }
-    to{
-        bottom: 8px;
-        font-size: 30px;
-    }
-}
-
-@keyframes shrinkHeaderBar {
-    from{
-        height: 110px;
-    }
-    to{
-        height: 69px;
-    }
-}
-@keyframes enlargeHeaderBar {
-    from{
-        height: 69px;
-    }
-    to{
-        height: 110px;
     }
 }

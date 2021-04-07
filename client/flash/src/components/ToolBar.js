@@ -4,6 +4,10 @@ import React from 'react'
 export const ToolBar = (props) => {
 
 
+    console.log("passed value " + props.movingUp)
+
+
+
     let openPopUp = async function openPopUp() {
         const popup = document.querySelector('.popup');
         const popupBlocker = document.querySelector('.popup-blocker');
@@ -144,7 +148,7 @@ export const ToolBar = (props) => {
 
 
     return (
-        <div className="header" id="header">
+        <div className="header" id="header" movingup={props.movingUp}>
 
             <div className="toolbar">
 
@@ -247,7 +251,7 @@ export const ToolBar = (props) => {
                 </button>
 
             </div>
-            <p className="title-text" id="titleText">Dashboard</p>
+            <p className="title-text" id="titleText" movingup={props.movingUp}>Dashboard</p>
             <div className="header-divider"/>
 
         </div>
