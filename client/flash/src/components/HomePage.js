@@ -16,6 +16,7 @@ export const HomePage = (props) => {
             <ToolBar
                 movingUp={movingUp}
                 dividers={props.dividers}
+                updateDividers={props.updateDividers}
             />
 
             <div className="main-section">

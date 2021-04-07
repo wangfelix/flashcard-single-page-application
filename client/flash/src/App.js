@@ -11,6 +11,10 @@ function App() {
     const [dividers, setDividers] = useState([]);
 
     useEffect(() => {
+        updateDividers()
+    }, [])
+
+    function updateDividers() {
         fetch('http://localhost:8001/api/dividers', {
             mode: 'cors',
             credentials: 'include'
@@ -26,7 +30,7 @@ function App() {
                     setError(error);
                 }
             )
-    }, [])
+    }
 
 
     if (error) {
@@ -39,7 +43,7 @@ function App() {
         return (
             <div className="App">
                 <SideBar dividers={dividers}/>
-                <HomePage dividers={dividers}/>
+                <HomePage dividers={dividers} updateDividers={updateDividers}/>
             </div>
         );
     }

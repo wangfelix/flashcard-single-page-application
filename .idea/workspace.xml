@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ac39fb6-f681-49df-bc40-0b0df743f727" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/flash/src/components/PopUpPlsBtn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/flash/src/components/css/PopUpPlsBtn.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/flash/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/flash/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/flash/src/components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/flash/src/components/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/flash/src/components/PopUpPlsBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/flash/src/components/PopUpPlsBtn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/flash/src/components/ToolBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/flash/src/components/ToolBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/flash/src/components/css/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/flash/src/components/css/HomePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/flash/src/components/css/ToolBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/flash/src/components/css/ToolBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/js/navShrinkOnScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/navShrinkOnScroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/flash/src/components/css/PopUpPlsBtn.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/flash/src/components/css/PopUpPlsBtn.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
       <workItem from="1617572180400" duration="2999000" />
       <workItem from="1617648528705" duration="14140000" />
       <workItem from="1617699962976" duration="27639000" />
-      <workItem from="1617787895799" duration="22160000" />
+      <workItem from="1617787895799" duration="30360000" />
     </task>
     <servers />
   </component>

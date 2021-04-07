@@ -1,53 +1,22 @@
 const express = require('express');
 const path = require('path');
 require('dotenv/config');
-
-
 const bodyParser = require('body-parser')
 const cors = require('cors')
-
 const mongoose = require('mongoose');
 const Stack = require('./models/Stack');
 const SectionContainer = require ('./models/SectionContainer');
 
-
 const app = express();
-
-
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: false}))
-
-app.use(express.static('public'));
-app.use("/static", express.static(path.resolve(__dirname, "public", "static")))
-
-// CORS Access
-app.use(cors({origin: 'http://localhost:3000',credentials: true}))
+app.use(cors({origin: 'http://localhost:3000',credentials: true})) // CORS Access
 
 mongoose.connect(process.env.DB_CONNECTION,{ useNewUrlParser: true, useUnifiedTopology: true  },  () => {
     console.log("Db connected");
 });
-
-
-
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
-});
-app.get('/sets', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
-});
-app.get('/explore', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
-});
-app.get('/stacks', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
-});
-app.get('/stacks/*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
-});
-
-
 
 
 
@@ -97,7 +66,6 @@ app.post('/api/newdivider', (req, res) => {
 })
 
 app.post('/api/new_stack', async (req, res) => {
-
 
     const stack = new Stack({
         stackName: req.body.stackName,

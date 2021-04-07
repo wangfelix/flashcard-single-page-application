@@ -27,6 +27,7 @@ export const ToolBar = (props) => {
                     popUpPlsBtnState={popUpPlsBtnState}
                     setPopUpPlsBtnState={setPopUpPlsBtnState}
                     dividers={props.dividers}
+                    updateDividers={props.updateDividers}
                 />
 
                 <button className="progressBtn">
