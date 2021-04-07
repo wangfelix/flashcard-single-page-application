@@ -10,11 +10,6 @@ function App() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [dividers, setDividers] = useState([]);
 
-
-
-    // Note: the empty deps array [] means
-    // this useEffect will run once
-    // similar to componentDidMount()
     useEffect(() => {
         fetch('http://localhost:8001/api/dividers', {
             mode: 'cors',
@@ -44,7 +39,7 @@ function App() {
         return (
             <div className="App">
                 <SideBar dividers={dividers}/>
-                <HomePage/>
+                <HomePage dividers={dividers}/>
             </div>
         );
     }

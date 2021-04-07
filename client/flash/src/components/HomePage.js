@@ -1,46 +1,24 @@
 import './css/HomePage.css'
 import React from 'react'
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import {ToolBar} from './ToolBar'
 
 export const HomePage = (props) => {
 
     const [movingUp, setMovingUp] = useState(0)
 
-
-
-    useEffect( () => {
-        /*window.onscroll = function() {scrollFunction()};*/
-        window.addEventListener("scroll", scrollFunction, true)
-    }, [])
-
-
     function scrollFunction() {
         document.querySelector(".homepage").scrollTop > 80 ? setMovingUp(1) : setMovingUp(0)
     }
 
-/*    useEffect(() => {
-        // this will be triggered whenever movingUp will be updated
-        console.log('updated movingUp ' + movingUp);
-
-        const title = document.querySelector('.title-text')
-        const header = document.querySelector('.header');
-
-        if (movingUp===1) {
-/!*            header.style.animation = 'shrinkHeaderBar 0.6s ease forwards'
-            title.style.animation = 'moveTitle 0.4s ease forwards'*!/
-        }else {
-/!*            header.style.animation = 'enlargeHeaderBar 0.6s ease forwards'
-            title.style.animation = 'moveBackTitle 0.4s ease forwards'*!/
-        }
-    }, [movingUp]);*/
-
-
     return (
-        <div className={"homepage"} >
-            <ToolBar movingUp={movingUp}/>
+        <div className={"homepage"} onScroll={scrollFunction}>
+            <ToolBar
+                movingUp={movingUp}
+                dividers={props.dividers}
+            />
 
-            <div onScroll={scrollFunction} className="main-section">
+            <div className="main-section">
                 <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur dignissimos
                     doloribus ducimus, earum eius eligendi est excepturi, fugiat incidunt inventore iste nam odit
                     pariatur, porro qui saepe tenetur vel vitae voluptatem! Amet assumenda aut dolorem doloremque
