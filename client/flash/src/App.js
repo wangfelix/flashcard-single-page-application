@@ -7,7 +7,7 @@ function App() {
 
     const [page, setPage] = useState('homepage')
     const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState('false');
     const [dividers, setDividers] = useState([]);
 
     useEffect(() => {
@@ -22,11 +22,11 @@ function App() {
             .then(res => res.json())
             .then(
                 (result) => {
-                    setIsLoaded(true);
+                    setIsLoaded('true');
                     setDividers(result);
                 },
                 (error) => {
-                    setIsLoaded(true);
+                    setIsLoaded('true');
                     setError(error);
                 }
             )
@@ -36,13 +36,13 @@ function App() {
     if (error) {
         return <div>Error: {error.message}</div>;
 
-    } else if (!isLoaded) {
+    } else if (isLoaded === 'false') {
         return <div className={"loading-screen"}><p>Loading...</p></div>;
 
     } else {
         return (
             <div className="App">
-                <SideBar dividers={dividers}/>
+                <SideBar dividers={dividers} contentLoaded={isLoaded} />
                 <HomePage dividers={dividers} updateDividers={updateDividers}/>
             </div>
         );

@@ -41,7 +41,13 @@ export const SideBar = (props) => {
                 {/* Container-div, that includes all the Dividers */}
                 <div className={"allSectionsContainer"}>
                     {props.dividers.map(divider => (
-                        <Divider key={divider._id} _id={divider._id} stacks={divider.stacks} sectionContainerName={divider.sectionContainerName} />
+                        <Divider
+                            key={divider._id}
+                            _id={divider._id}
+                            stacks={divider.stacks}
+                            sectionContainerName={divider.sectionContainerName}
+                            contentLoaded={props.contentLoaded}
+                        />
                     ))}
                 </div>
 

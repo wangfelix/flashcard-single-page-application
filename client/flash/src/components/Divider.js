@@ -3,7 +3,11 @@ import './css/Divider.css'
 
 export const Divider  = (props) => {
     return (
-        <div className={"singleSectionContainer"} id={props._id}>
+        <div
+            className={"singleSectionContainer"}
+            id={props._id}
+            content-loaded={props.contentLoaded}
+        >
 
             <div className={"dividerWithText"}>
                 <p className={"dividerText"}> {props.sectionContainerName} </p>
