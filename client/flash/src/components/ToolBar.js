@@ -6,22 +6,12 @@ export const ToolBar = (props) => {
 
     const [popUpPlsBtnState, setPopUpPlsBtnState] = useState('closed')
 
-
     console.log("passed value " + props.movingUp)
-
-
-
 
     return (
         <div className="header" id="header" movingup={props.movingUp}>
 
-
-
-
-
             <div className="toolbar">
-
-
 
                 <PopUpPlsBtn
                     popUpPlsBtnState={popUpPlsBtnState}
@@ -47,12 +37,12 @@ export const ToolBar = (props) => {
                 </button>
 
                 <button className="settingsBtn"
-                        onClick="
+/*                        onClick={
                         document.getElementById('id01').style.display='block';
                         document.querySelector('.dimBackgroundForModals').style.display='block';
                         document.querySelector('.dimBackgroundForModals').style.animation='blurBackground 0.4s ease forwards';
                         document.querySelector('.settings-modal').style.animation='settings-modal-slide-in 0.2s ease forwards'
-                    "
+                    }*/
                 >
                     <svg width="468" height="468" viewBox="0 0 468 468" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
@@ -70,9 +60,6 @@ export const ToolBar = (props) => {
                 </button>
 
             </div>
-
-
-
 
             <p className="title-text" id="titleText" movingup={props.movingUp}>Dashboard</p>
             <div className="header-divider"/>

@@ -1,15 +1,24 @@
 import React, {useState, useEffect} from 'react'
 import './css/PopUpPlsBtn.css'
 
+
 export const PopUpPlsBtn  = (props) => {
 
     const [textFieldValue, setTextFieldValue] = useState("")
     const [selectorPosition, setSelectorPosition] = useState('left')
+    const [objIdOfSelectedDivider, setObjIdOfSelectedDivider] = useState('')
+    const [popUpTitle, setPopUpTitle] = useState('Create new Divider')
 
-    let popUpTitle = 'Create new Divider'
+
     useEffect(() => {
-        popUpTitle = selectorPosition==='left'? "Create new Divider" : "Create new Stack"
+        selectorPosition==='left'? setPopUpTitle("Create new Divider") : setPopUpTitle("Create new Stack")
     }, [selectorPosition])
+
+    // TEST _____________________________________________________________________
+    useEffect(() => {
+        console.log("objIdOfSelectedDivider: " + objIdOfSelectedDivider)
+    }, [objIdOfSelectedDivider])
+    // TEST _____________________________________________________________________
 
     let openPopUp = async function openPopUp() {
         props.setPopUpPlsBtnState('opened')
@@ -50,8 +59,8 @@ export const PopUpPlsBtn  = (props) => {
             } else {
 
                 //TODO Create new Stack
-                //get the dividers Object Id
-                const objIdOfSelectedDivider = document.querySelector('input[name="divider"]:checked').value
+                //get the divider's Object Id
+/*                const objIdOfSelectedDivider = document.querySelector('input[name="divider"]:checked').value*/
 
                 let stack = {
                     "stackName": textFieldValue,
@@ -71,10 +80,11 @@ export const PopUpPlsBtn  = (props) => {
                     .then(async response => {
                         console.log(response.dividerName);
                         /* await updateNavBar(elementName, objIdOfSelectedDivider, response.dividerName);*/
+                        props.updateDividers()
                     })
             }
         } catch (e) {
-            console.log(e.message)
+            console.log("error" + e.message)
         }
     }
 
@@ -147,7 +157,12 @@ export const PopUpPlsBtn  = (props) => {
                                 >
                                     {props.dividers.map(divider => (
                                         <div>
-                                            <input type="radio" key={divider._id} name="divider" value="divider['_id']" />
+                                            <input
+                                                type="radio" key={divider._id}
+                                                name="divider"
+                                                value={divider._id}
+                                                onClick={() => setObjIdOfSelectedDivider(divider.sectionContainerName)}
+                                            />
                                             <label className={"divider-radio-input-label"} htmlFor={divider.sectionContainerName}>
                                                 {divider.sectionContainerName}
                                             </label>
