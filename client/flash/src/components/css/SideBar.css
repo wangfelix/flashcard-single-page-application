@@ -22,6 +22,15 @@
     overflow: auto;
 }
 
+.logo-list-divider {
+    height: 2px;
+    background-color: #EAEAEA;
+    width: 90%;
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-bottom: 8px;
+}
+
 .nav-ui-li-border-div{
     height: 5%;
     min-height: 35px;

@@ -23,7 +23,7 @@ export const SideBar = (props) => {
 
             <ul className={"nav-links"}>
 
-                <div className={"divider"}/>
+                <div className={"logo-list-divider"}/>
 
                 <div className={"nav-ui-li-border-div"}>
                     <li className={"li"}>

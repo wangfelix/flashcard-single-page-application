@@ -14,3 +14,11 @@
   display: grid;
   grid-template-columns: var(--sidebar-width) auto;
 }
+
+.loading-screen{
+  display: grid;
+  place-items: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}

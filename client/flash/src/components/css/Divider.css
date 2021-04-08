@@ -2,14 +2,6 @@
     overflow-y: hidden;
 }
 
-.divider {
-    height: 2px;
-    background-color: #EAEAEA;
-    width: 90%;
-    border-radius: 10px;
-    margin-left: 5%;
-    margin-bottom: 8px;
-}
 
 .dividerWithText {
     width: 90%;
@@ -26,6 +18,7 @@
 
 .dividerText {
     margin-left: 5px;
+    margin-bottom: 0;
     font-size: 14px;
     font-weight: bold;
     color: #333333;

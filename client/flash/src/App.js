@@ -37,7 +37,7 @@ function App() {
         return <div>Error: {error.message}</div>;
 
     } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <div className={"loading-screen"}><p>Loading...</p></div>;
 
     } else {
         return (
