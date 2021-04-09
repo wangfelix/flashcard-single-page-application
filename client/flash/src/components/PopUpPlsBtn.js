@@ -58,10 +58,6 @@ export const PopUpPlsBtn  = (props) => {
 
             } else {
 
-                //TODO Create new Stack
-                //get the divider's Object Id
-/*                const objIdOfSelectedDivider = document.querySelector('input[name="divider"]:checked').value*/
-
                 let stack = {
                     "stackName": textFieldValue,
                     "divider": objIdOfSelectedDivider,
@@ -78,8 +74,6 @@ export const PopUpPlsBtn  = (props) => {
                 })
                     .then(response => response.json())
                     .then(async response => {
-                        console.log(response.dividerName);
-                        /* await updateNavBar(elementName, objIdOfSelectedDivider, response.dividerName);*/
                         props.updateDividers()
                     })
             }

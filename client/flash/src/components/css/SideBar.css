@@ -113,3 +113,22 @@
     border-radius: 10px;
     margin-left: 5%;
 }
+
+.home-icon{
+    margin-left: 16px;
+}
+.home-icon path{
+    fill: #333;
+}
+
+.explore-icon {
+    margin-left: 16px;
+}
+
+.explore-icon path {
+    fill: #333;
+}
+
+.nav-ui-li-border-div:hover>.li svg path{
+    fill: white;
+}
