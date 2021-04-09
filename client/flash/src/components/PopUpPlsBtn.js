@@ -161,7 +161,7 @@ export const PopUpPlsBtn  = (props) => {
                                                 type="radio" key={divider._id}
                                                 name="divider"
                                                 value={divider._id}
-                                                onClick={() => setObjIdOfSelectedDivider(divider.sectionContainerName)}
+                                                onClick={() => setObjIdOfSelectedDivider(divider._id)}
                                             />
                                             <label className={"divider-radio-input-label"} htmlFor={divider.sectionContainerName}>
                                                 {divider.sectionContainerName}

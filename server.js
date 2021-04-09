@@ -67,13 +67,11 @@ app.post('/api/newdivider', (req, res) => {
 
 app.post('/api/new_stack', async (req, res) => {
 
-    console.log('api new stack asugeführt');
-    const stack = new Stack({                               //TODO Error: Argument passed in must be a single String of 12 bytes...
+    const stack = new Stack({
         stackName: req.body.stackName,
         divider: mongoose.Types.ObjectId(req.body.divider),
         cards: req.body.cards
     });
-    console.log('stack erstellt');
 
     try {
         const savedStack = stack.save();
@@ -100,7 +98,6 @@ app.post('/api/new_stack', async (req, res) => {
         console.log('error in app post');
         res.json({message: err});
     }
-
 })
 
 app.post('/', async (req, res) => {
