@@ -22,3 +22,10 @@
   height: 100%;
   width: 100%;
 }
+
+.content{
+  width: 100%;
+  grid-column: 2/ span 1;
+  height: 100vh;
+  overflow-y: auto;
+}

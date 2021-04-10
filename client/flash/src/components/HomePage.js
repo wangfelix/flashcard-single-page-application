@@ -8,11 +8,11 @@ export const HomePage = (props) => {
     const [movingUp, setMovingUp] = useState(0)
 
     function scrollFunction() {
-        document.querySelector(".homepage").scrollTop > 80 ? setMovingUp(1) : setMovingUp(0)
+        document.querySelector("#homepage").scrollTop > 80 ? setMovingUp(1) : setMovingUp(0)
     }
 
     return (
-        <div className={"homepage"} onScroll={scrollFunction}>
+        <div className={props.className} id={"homepage"} onScroll={scrollFunction}>
             <ToolBar
                 movingUp={movingUp}
                 dividers={props.dividers}
