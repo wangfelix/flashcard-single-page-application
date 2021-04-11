@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import { SideBar } from "./components/SideBar";
 import { HomePage } from "./components/HomePage";
+import {ExplorePage} from "./components/ExplorePage";
 import {useState, useEffect} from "react";
 
 function App() {
@@ -56,16 +57,8 @@ function App() {
                         <Route exact path={'/'}>
                             <HomePage className={"content"} dividers={dividers} updateDividers={updateDividers}/>
                         </Route>
-                        <Route exact path={'/hi'}>
-                            <div className={"content"}><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequatur dignissimos
-                                doloribus ducimus, earum eius eligendi est excepturi, fugiat incidunt inventore iste nam odit
-                                pariatur, porro qui saepe tenetur vel vitae voluptatem! Amet assumenda aut dolorem doloremque
-                                doloribus dolorum error impedit ipsa iste, labore molestias omnis praesentium quas repellat suscipit
-                                ut voluptatibus. Eum explicabo id necessitatibus odit omnis, perferendis repellendus sunt
-                                voluptatum. Accusamus alias id illum ipsa modi mollitia, nostrum officia perferendis sunt voluptate?
-                                Aliquid aspernatur assumenda beatae blanditiis, corporis eveniet fuga laudantium nemo nobis
-                                perferendis quae quia quidem, repellendus ullam ut vero voluptates. Dolorum iste maiores qui
-                                quibusdam ratione!Lorem2sfewvfvekbmnwkgnbrknrbnrinrinrinbiewnbirnbirnbirnbirb</p></div>
+                        <Route exact path={'/explore'}>
+                            <ExplorePage className={"content"} dividers={dividers} updateDividers={updateDividers}/>
                         </Route>
                     </Switch>
                 </div>
