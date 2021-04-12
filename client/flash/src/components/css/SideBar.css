@@ -32,7 +32,6 @@
 }
 
 .nav-ui-li-border-div{
-    height: 5%;
     min-height: 35px;
     display: flex;
     justify-content: flex-start;

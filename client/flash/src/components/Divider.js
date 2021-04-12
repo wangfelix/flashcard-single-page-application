@@ -1,5 +1,6 @@
 import React from 'react'
 import './css/Divider.css'
+import {Link} from "react-router-dom";
 
 export const Divider  = (props) => {
     return (
@@ -19,9 +20,7 @@ export const Divider  = (props) => {
                 {props.stacks.map(stack => (
                     <div className={"nav-ui-li-border-div"} key={stack._id}>
                         <li className={"li"}>
-                            <a className={"setNavLink"} href={"/stacks/" + props.sectionContainerName + ":" + stack.stackName}>
-                                {stack.stackName}
-                            </a>
+                            <Link className={"setNavLink"} to={"/stacks/" + props.sectionContainerName + "/" + stack.stackName}>{stack.stackName}</Link>
                         </li>
                     </div>
                 ))}

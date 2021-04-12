@@ -10,6 +10,7 @@ import {
 import { SideBar } from "./components/SideBar";
 import { HomePage } from "./components/HomePage";
 import {ExplorePage} from "./components/ExplorePage";
+import { StackPage } from "./components/StackPage";
 import {useState, useEffect} from "react";
 
 function App() {
@@ -57,8 +58,11 @@ function App() {
                         <Route exact path={'/'}>
                             <HomePage className={"content"} dividers={dividers} updateDividers={updateDividers}/>
                         </Route>
-                        <Route exact path={'/explore'}>
+                        <Route path={'/explore'}>
                             <ExplorePage className={"content"} dividers={dividers} updateDividers={updateDividers}/>
+                        </Route>
+                        <Route path={'/stacks/:divider/:stack'}>
+                            <StackPage/>
                         </Route>
                     </Switch>
                 </div>
