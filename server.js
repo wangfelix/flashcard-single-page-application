@@ -4,6 +4,7 @@ require('dotenv/config');
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose');
+const Card = require('./models/Card')
 const Stack = require('./models/Stack');
 const SectionContainer = require ('./models/SectionContainer');
 
@@ -36,6 +37,28 @@ app.get('/api/dividers', async (req, res) => {
     try {
         const sectionContainers = await SectionContainer.find().populate('stacks');
         res.json(sectionContainers);
+    }
+    catch (err) {
+        res.json({message: err});
+    }
+});
+
+app.get('/api/cards/:divider/:stack', async (req, res) => {
+
+    const divider_name = req.params.divider
+    const stack_name = req.params.stack
+    try {
+        const cards = await Stack.find({stackName: stack_name}).populate('divider').populate('cards');
+        let response = ''
+
+        cards.forEach(stack => {
+            if (stack.divider.sectionContainerName === divider_name) {
+                response = stack.cards
+
+            }
+        })
+
+        res.json(response)
     }
     catch (err) {
         res.json({message: err});

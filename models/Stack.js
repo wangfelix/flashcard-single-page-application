@@ -12,8 +12,7 @@ const StackSchema = mongoose.Schema({
     },
     cards: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Card",
-        required: true
+        ref: "Card"
     }]
 });
 
