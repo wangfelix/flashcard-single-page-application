@@ -1,0 +1,11 @@
+.content[id='stack-page']{
+
+}
+.card-container {
+/*    background: aquamarine;*/
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    padding: 130px 40px 40px 40px;
+    margin: -20px -20px;
+}

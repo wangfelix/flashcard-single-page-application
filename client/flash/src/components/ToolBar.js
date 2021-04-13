@@ -61,7 +61,7 @@ export const ToolBar = (props) => {
 
             </div>
 
-            <p className="title-text" id="titleText" movingup={props.movingUp}>Dashboard</p>
+            <p className="title-text" id="titleText" movingup={ props.movingUp }>{ props.title }</p>
             <div className="header-divider"/>
 
         </div>

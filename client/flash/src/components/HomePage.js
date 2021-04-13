@@ -14,6 +14,7 @@ export const HomePage = (props) => {
     return (
         <div className={props.className} id={"homepage"} onScroll={scrollFunction}>
             <ToolBar
+                title={"Dashboard"}
                 movingUp={movingUp}
                 dividers={props.dividers}
                 updateDividers={props.updateDividers}

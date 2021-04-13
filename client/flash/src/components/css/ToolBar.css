@@ -176,13 +176,6 @@
     opacity: 0.7;
 }
 
-.main-section {
-    padding-top: 130px;
-    /*overflow: scroll;*/
-    flex-grow: 1;
-    display: flex;
-}
-
 .scrolledUp{
 
 }

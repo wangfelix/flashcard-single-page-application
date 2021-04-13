@@ -62,7 +62,7 @@ function App() {
                             <ExplorePage className={"content"} dividers={dividers} updateDividers={updateDividers}/>
                         </Route>
                         <Route path={'/stacks/:divider/:stack'}>
-                            <StackPage/>
+                            <StackPage className={"content"} dividers={dividers} updateDividers={updateDividers}/>
                         </Route>
                     </Switch>
                 </div>

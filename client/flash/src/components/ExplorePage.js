@@ -14,6 +14,7 @@ export const ExplorePage = (props) => {
     return (
         <div className={props.className} id={"explore-page"} onScroll={scrollFunction}>
             <ToolBar
+                title={"Explore"}
                 movingUp={movingUp}
                 dividers={props.dividers}
                 updateDividers={props.updateDividers}
