@@ -1,0 +1,181 @@
+/* HEADER-NAVBAR -------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------------------*/
+
+.header {
+    display: flex;
+    flex-direction: column;
+    height: 110px;
+    width: calc(100% - 250px);
+    position: fixed;
+    top: 0;
+
+
+    background-color: rgba(256, 256, 256, .85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.header[movingup='0'] {
+    animation: enlargeHeaderBar 0.6s ease forwards;
+}
+
+.header[movingup='1'] {
+    animation: shrinkHeaderBar 0.6s ease forwards;
+}
+
+@keyframes shrinkHeaderBar {
+    from{
+        height: 110px;
+    }
+    to{
+        height: 69px;
+    }
+}
+
+@keyframes enlargeHeaderBar {
+    from{
+        height: 69px;
+    }
+    to{
+        height: 110px;
+    }
+}
+
+
+
+
+.header .title-text{
+
+    position: absolute;
+    bottom: 8px;
+    left: 30px;
+    color: #222;
+    font-size: 30px;
+    font-weight: bold;
+    height: 1fr;
+    margin-bottom: 0;
+}
+
+.header .title-text[movingup='1']{
+    animation: moveTitle 0.4s ease forwards;
+}
+
+.header .title-text[movingup='0']{
+    animation: moveBackTitle 0.4s ease forwards;
+}
+
+@keyframes moveTitle {
+    from{
+        bottom: 8px;
+        font-size: 30px;
+    }
+    to{
+        bottom: 20px;
+        font-size: 22px;
+    }
+}
+
+@keyframes moveBackTitle {
+    from{
+        bottom: 20px;
+        font-size: 22px;
+    }
+    to{
+        bottom: 8px;
+        font-size: 30px;
+    }
+}
+
+
+
+
+
+
+
+.header .header-divider {
+    background-color: #F0F0F0;
+    height: 2px;
+    width: calc(100% - 60px);
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+
+    position: absolute;
+    bottom: 0;
+}
+
+
+@keyframes extendHeight {
+    from{
+        height: 200px;
+    }
+    to{
+        height: 350px;
+    }
+}
+@keyframes reduceHeight {
+    from{
+        height: 350px;
+    }
+    to{
+        height: 200px;
+    }
+}
+
+.toolbar button{
+    /* disables the outline border of buttons, when clicked*/
+    outline: none;
+}
+
+
+.toolbar{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30px;
+    /*background-color: #222222;*/
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+
+.open{
+    display: block;
+}
+
+
+
+
+
+.toolbar button{
+    background-color: #E9AF40;
+    height: 35px;
+    width: 35px;
+
+    border-style: none;
+    border-radius: 50%;
+    margin-left: 35px;
+    background-color: rgba(1,1,1,0);
+
+    color: #333333;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.toolbar button svg {
+    position: relative;
+    height: 50%;
+    width: 50%;
+}
+.toolbar button:hover{
+    opacity: 0.7;
+}
+
+.scrolledUp{
+
+}
