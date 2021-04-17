@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "cleave.js": "^1.6.0",
     "prop-types": "^15.7.2"
   }
 }

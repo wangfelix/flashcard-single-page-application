@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import {useParams, useRouteMatch} from "react-router-dom";
+import {Link, useLocation, useParams, useRouteMatch} from "react-router-dom";
 import { FlashCard } from "./FlashCard";
 import './css/StackPage.css'
 import {ToolBar} from "./ToolBar";
+import {TextEditor} from "./TextEditor";
 
 export const StackPage = (props) => {
     const params = useParams()
     const match = useRouteMatch()
+    const location = useLocation()
+
+    // If query param edit exists and is 'true', the component will return the "edit page" of the stack
+    const edit = new URLSearchParams(location.search).get("edit")
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState('false');
@@ -39,7 +44,8 @@ export const StackPage = (props) => {
                     setError(error);
                 }
             )
-    }, [])
+    }, [params.stack])
+    /*every time the user changes to a different stackPage, the params changes and the cards of that exact stack get loaded in*/
 
     // TEST--------------------------------------------------
     useEffect(() => {
@@ -52,32 +58,64 @@ export const StackPage = (props) => {
     console.log(match)
     console.log('params')
     console.log(params)
+    console.log('location')
+    console.log(location)
     // TEST--------------------------------------------------
 
 
     if (error) {
-        return <div>Error: {error.message}</div>;
+        return <div className={'content'}><div>Error: {error.message}</div></div>;
     } else if (isLoaded === 'false') {
-        return <div className={"loading-screen"}><p>Loading...</p></div>;
+        return <div className={'content'}><div className={"loading-screen"}><p>Loading...</p></div></div>;
     } else {
-        return (
-            <div className={props.className} id={"stack-page"} onScroll={scrollFunction}>
-                {/* <div>{params.divider}/{params.stack}, {match.url}</div> */}
-                <ToolBar
-                    title={params.stack}
-                    movingUp={movingUp}
-                    dividers={props.dividers}
-                    updateDividers={props.updateDividers}
-                />
 
-                <div className={"card-container"}>
-                    {cards.map(card => (
-                        <FlashCard card={card}/>
-                    ))}
+        if (edit === 'true') {
+            return (
+                <div className={'edit-page'}>
+
+                    <div className={'mini-view-bar'}>
+                        {cards.map(card => (
+                            <FlashCard card={card}/>
+                        ))}
+                    </div>
+
+                    <div className={'content'}>
+                        <div className={'header-bar'}>
+                            <Link to="/" onClick={() => {}}>Save</Link>
+                        </div>
+                        <div className={'edit-area'}>
+                            <TextEditor></TextEditor>
+                            <TextEditor></TextEditor>
+                        </div>
+                    </div>
                 </div>
+            )
+        } else {
+            return (
+                <div className={props.className} id={"stack-page"} onScroll={scrollFunction}>
+                    {/* <div>{params.divider}/{params.stack}, {match.url}</div> */}
+                    <ToolBar
+                        title={params.stack}
+                        movingUp={movingUp}
+                        dividers={props.dividers}
+                        updateDividers={props.updateDividers}
 
-            </div>
-        )
+                    />
+
+                    <div className={'content'}>
+                        <div className={"card-container"}>
+                            {cards.map(card => (
+                                <FlashCard card={card}/>
+                            ))}
+                        </div>
+
+
+                        <Link to={'/'}><div>Edit</div></Link>
+                    </div>
+
+                </div>
+            )
+        }
     }
 
 }
