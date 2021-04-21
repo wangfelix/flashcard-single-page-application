@@ -123,6 +123,44 @@ app.post('/api/new_stack', async (req, res) => {
     }
 })
 
+app.post('/api/new_card', async (req, res) => {
+
+    console.log("req.body on create new card request")
+    console.log(req.body)
+
+    const card = new Card({
+        frontContent: req.body.frontContent,
+        backContent: req.body.frontContent,
+        stack: mongoose.Types.ObjectId(req.body.divider) // req.body.stackID fehlt noch
+    });
+
+    try {
+        const savedStack = stack.save();
+
+        // console.log("stack._id: " + stack._id)
+        // console.log("req.body.divider: " + mongoose.Types.ObjectId(req.body.divider))
+        // console.log(await SectionContainer.findOne({_id: req.body.divider}))
+        // console.log(await SectionContainer.findById(mongoose.Types.ObjectId(req.body.divider)).sectionContainerName)
+
+        const divider = await SectionContainer.findOne({_id: req.body.divider});
+        const dividerName = divider.sectionContainerName
+
+        console.log("divider: " + divider)
+        console.log("dividerName: " + dividerName)
+
+        await SectionContainer.findByIdAndUpdate(
+            req.body.divider,
+            { $push: { stacks: stack._id } },
+            { new: true, useFindAndModify: false }
+        )
+        //res.json(savedStack);
+        res.json({dividerName: dividerName})
+    } catch (err){
+        console.log('error in app post');
+        res.json({message: err});
+    }
+})
+
 app.post('/', async (req, res) => {
     console.log(req.body);
     const stack = new Stack({

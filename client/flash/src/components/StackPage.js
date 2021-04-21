@@ -3,7 +3,7 @@ import {Link, useLocation, useParams, useRouteMatch} from "react-router-dom";
 import { FlashCard } from "./FlashCard";
 import './css/StackPage.css'
 import {ToolBar} from "./ToolBar";
-import {TextEditor} from "./TextEditor";
+import {EditPage} from "./EditPage";
 
 export const StackPage = (props) => {
     const params = useParams()
@@ -19,6 +19,9 @@ export const StackPage = (props) => {
     //  Array of Cards, Card:{_id: String(ObjId), stack: String(ObjId), frontContent: String, backContent: String}
     const [cards, setCards] = useState([])
 
+    // Stores the Object Id of the currently displayed stack
+    const [stackObjId, setStackObjId] = useState(0)
+
     // Css selector uses movingUp to Handle the shrinking and expanding animation Toolbar Component when scrolling
     const [movingUp, setMovingUp] = useState(0)
 
@@ -26,8 +29,7 @@ export const StackPage = (props) => {
         document.querySelector("#stack-page").scrollTop > 80 ? setMovingUp(1) : setMovingUp(0)
     }
 
-    useEffect(() => {
-
+    const updateCards = () => {
         const url = 'http://localhost:8001/api/cards/' + encodeURIComponent(params.divider) + '/' + encodeURIComponent(params.stack)
         fetch(url, {
             mode: 'cors',
@@ -44,12 +46,14 @@ export const StackPage = (props) => {
                     setError(error);
                 }
             )
-    }, [params.stack])
+    }
+
     /*every time the user changes to a different stackPage, the params changes and the cards of that exact stack get loaded in*/
+    useEffect(() => {updateCards()}, [params.stack])
 
     // TEST--------------------------------------------------
     useEffect(() => {
-        console.log('cards')
+        console.log('cards updated')
         console.log(cards)
     }, [cards])
 
@@ -71,24 +75,10 @@ export const StackPage = (props) => {
 
         if (edit === 'true') {
             return (
-                <div className={'edit-page'}>
-
-                    <div className={'mini-view-bar'}>
-                        {cards.map(card => (
-                            <FlashCard card={card}/>
-                        ))}
-                    </div>
-
-                    <div className={'content'}>
-                        <div className={'header-bar'}>
-                            <Link to="/" onClick={() => {}}>Save</Link>
-                        </div>
-                        <div className={'edit-area'}>
-                            <TextEditor></TextEditor>
-                            <TextEditor></TextEditor>
-                        </div>
-                    </div>
-                </div>
+                <EditPage
+                    cards={cards}
+                    updateCards={updateCards}
+                />
             )
         } else {
             return (
@@ -99,7 +89,6 @@ export const StackPage = (props) => {
                         movingUp={movingUp}
                         dividers={props.dividers}
                         updateDividers={props.updateDividers}
-
                     />
 
                     <div className={'content'}>
@@ -108,7 +97,6 @@ export const StackPage = (props) => {
                                 <FlashCard card={card}/>
                             ))}
                         </div>
-
 
                         <Link to={'/'}><div>Edit</div></Link>
                     </div>
